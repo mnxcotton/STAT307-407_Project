@@ -1,6 +1,6 @@
-############################################################
+###############################################################
 #Set-Up Before Coding Design
-############################################################
+###############################################################
 #Randomization
 rmo <- matrix(0,nrow=4,ncol=4)
 for(i in 1:4){
@@ -38,9 +38,9 @@ treatments
 data <- data.frame(mem_score, participant, mem_game, treatments, days)
 data
 
-############################################################
+###############################################################
 #Initial Design: RCBD
-############################################################
+###############################################################
 
 treatments <- as.factor(treatments)
 blocks <- as.factor(mem_game)
@@ -52,9 +52,9 @@ shapiro.test(m$residuals)
 bartlett.test(mem_score, treatments)
 bartlett.test(mem_score, blocks)
 
-############################################################
-#Revised Design: 2^3 Factorial with 4 blocks as replicates 
-############################################################
+###############################################################
+#Revised Design: 2^3 Factorial with replicates within 4 blocks
+###############################################################
 
 treatments <- as.character(treatments)
 A <- treatments
